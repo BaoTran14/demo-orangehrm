@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration xmlns=""
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="">
+    <Appenders>
+        <Console name="CONSOLE">
+            <PatternLayout pattern="[%d{yyyy-MM-dd HH:mm:ss}] [%t] [%p] [%c.%M()] - %msg%n"/>
+        </Console>
+        <RollingFile name="MAIN"
+                     fileName="logs/main.log"
+                     filePattern="logs/main-%d{yyyy-MM-dd}.log">
+            <PatternLayout pattern="[%d{yyyy-MM-dd HH:mm:ss}] [%t] [%p] [%c.%M()] - %msg%n"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="30" modulate="true"/>
+            </Policies>
+        </RollingFile>
+    </Appenders>
+    <Loggers>
+        <!--        Set log level & call config <Appenders>-->
+        <Root level="TRACE">
+            <AppenderRef ref="CONSOLE"/>
+            <AppenderRef ref="MAIN"/>
+        </Root>
+    </Loggers>
+</Configuration>
