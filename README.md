@@ -24,12 +24,21 @@ Command to run test: =>Decide code
 
 ## CONVENTION
 
+### -Dlanguage accepts
+
+- List = {english, vietnamese, chinese, german, italian, korean, japanese}
+
 ### Properties Data File
 
-- File Name:
+- Folder & File Name:
 
-  - {environmentName}.properties => Test data of specific environment (e.g: dev.properties)
-  - common.properties => Common test data across all environments
+  - Folder environment =>Contains environment properties file
+    - {environmentName}.properties => Test data of specific environment (e.g: dev.properties)
+    - common.properties => Common test data across all environments
+
+  - Folder language =>Contains langauge properties file
+    - {language}.properties => Test data of specific language (e.g: vietnamese.properties)
+    - Note: prefix {language} must be equal system property value of -Dlanguage (e.g: -Dlanguage-english, then file name must be english.properties)
 
 - Key Name: 
   - lower case
