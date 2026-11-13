@@ -4,12 +4,12 @@
                xsi:schemaLocation="">
     <Appenders>
         <Console name="CONSOLE">
-            <PatternLayout pattern="[%d{yyyy-MM-dd HH:mm:ss}] [%t] [%p] [%c.%M()] - %msg%n"/>
+            <PatternLayout pattern="[%d{yyyy-MM-dd HH:mm:ss}] [%t] [%p] [%c.%M()] - %msg%n" charset="UTF-8"/>
         </Console>
         <RollingFile name="MAIN"
                      fileName="logs/main.log"
                      filePattern="logs/main-%d{yyyy-MM-dd}.log">
-            <PatternLayout pattern="[%d{yyyy-MM-dd HH:mm:ss}] [%t] [%p] [%c.%M()] - %msg%n"/>
+            <PatternLayout pattern="[%d{yyyy-MM-dd HH:mm:ss}] [%t] [%p] [%c.%M()] - %msg%n" charset="UTF-8"/>
             <Policies>
                 <TimeBasedTriggeringPolicy interval="30" modulate="true"/>
             </Policies>
